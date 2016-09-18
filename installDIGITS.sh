@@ -35,3 +35,12 @@ chmod u+x bvlc_googlenet.caffemodel
 ls /usr/share/digits/digits/jobs
 sudo stop nvidia-digits-server
 sudo start nvidia-digits-server
+
+sudo cp 20160916-163334-8633.tar.gz /usr/share/digits/digits/jobs
+sudo tar -zxvf 20160916-163334-8633.tar.gz
+
+/home/ubuntu/bvlc_googlenet.caffemodel
+
+https://googledrive.com/host/0Byy89WZKSf_3bHF5Vy00cnJXU1k/DATASETS.tar.gz
+
+sudo tar -zxvf DATASETS.tar.gz
