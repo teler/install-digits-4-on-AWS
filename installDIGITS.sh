@@ -26,6 +26,8 @@ sudo apt-get install digits
 
 sudo reboot
 
+https://googledrive.com/host/0Byy89WZKSf_3bHF5Vy00cnJXU1k/20160916-163334-8633.tar.gz
+
 #download bvlc_googlenet.caffemodel
 wget http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel
 chmod u+x bvlc_googlenet.caffemodel
