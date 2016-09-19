@@ -6,10 +6,10 @@
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get install -y linux-image-extra-`uname -r`
 #Install NVIDIA drivers
-sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo add-apt-repository ppa:graphics-drivers/ppa 
 sudo apt-get update
 sudo apt-get install nvidia-361 nvidia-settings
-
+sudo reboot
 
 #Get CUDA and NVIDIA’s machine learning repos
 CUDA_REPO_PKG=cuda-repo-ubuntu1404_7.5-18_amd64.deb && 
@@ -26,7 +26,9 @@ sudo apt-get install digits
 
 sudo reboot
 
-https://googledrive.com/host/0Byy89WZKSf_3bHF5Vy00cnJXU1k/20160916-163334-8633.tar.gz
+wget https://googledrive.com/host/0Byy89WZKSf_3bHF5Vy00cnJXU1k/detectnet1.tar.gz
+
+tar -zxvf detectnet1.tar.gz
 
 #download bvlc_googlenet.caffemodel
 wget http://dl.caffe.berkeleyvision.org/bvlc_googlenet.caffemodel
