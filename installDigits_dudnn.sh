@@ -1,6 +1,6 @@
 #!/bin/bash
-set -x
-trap read debug
+#set -x
+#trap read debug
 
 #wget https://raw.githubusercontent.com/teler/install-digits-4-on-AWS/master/installDigits_dudnn.sh
 #chmod +x installDigits_dudnn.sh
