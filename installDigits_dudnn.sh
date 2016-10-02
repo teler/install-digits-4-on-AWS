@@ -6,19 +6,20 @@
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get install -y linux-image-extra-`uname -r`
 #Install NVIDIA drivers
-#sudo add-apt-repository ppa:graphics-drivers/ppa
-#sudo apt-get update
-#sudo apt-get install nvidia-361 nvidia-settings
+sudo add-apt-repository ppa:graphics-drivers/ppa
+sudo apt-get update
+sudo apt-get install nvidia-361 nvidia-settings
 
-#InstallCUDA	
+#Install CUDA	
 CUDA_REPO_PKG=cuda-repo-ubuntu1404_7.5-18_amd64.deb
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/${CUDA_REPO_PKG} -O /tmp/${CUDA_REPO_PKG}
 sudo dpkg -i /tmp/${CUDA_REPO_PKG}
+sudo apt-get install cuda
 rm -f /tmp/${CUDA_REPO_PKG}
 
-#InstallCUDnn
+#Install cudnn
 wget http://admindv.s3.amazonaws.com/cuda_cudnn.tar.gz
-tar -xvf cudnn-8.0-linux-x64-v5.1.tgz
+tar -xvf cuda_cudnn.tar.gz
 
 sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda-8.0/lib64
