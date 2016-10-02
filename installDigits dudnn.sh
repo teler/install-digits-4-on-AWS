@@ -29,15 +29,3 @@ sudo dpkg -i nvidia-machine-learning-repo-ubuntu1404_4.0-2_amd64.deb
 
 sudo apt-get update
 sudo apt-get install digits
-
-#Install caffe
-
-wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/libcaffe-nv0_0.15.9-1+cuda7.5_amd64.deb &&
-sudo dpkg -i libcaffe-nv0_0.15.9-1+cuda7.5_amd64.deb
-
-#Install python-caffe
-
-wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/python-caffe-nv_0.15.9-1+cuda7.5_amd64.deb &&
-sudo dpkg -i python-caffe-nv_0.15.9-1+cuda7.5_amd64.deb
-
-sudo apt-get update
