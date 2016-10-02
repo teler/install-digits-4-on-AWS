@@ -35,4 +35,17 @@ rm -f /tmp/${ML_REPO_PKG}
 sudo apt-get update
 sudo apt-get install digits
 
+sudo apt-get install --no-install-recommends git graphviz python-dev python-flask python-flaskext.wtf python-gevent python-h5py python-numpy python-pil python-protobuf python-scipy
+
+sudo apt-get install --no-install-recommends build-essential cmake git gfortran libatlas-base-dev libboost-all-dev libgflags-dev libgoogle-glog-dev libhdf5-serial-dev libleveldb-dev liblmdb-dev libopencv-dev libprotobuf-dev libsnappy-dev protobuf-compiler python-all-dev python-dev python-h5py python-matplotlib python-numpy python-opencv python-pil python-pip python-protobuf python-scipy python-skimage python-sklearn
+export CAFFE_ROOT=~/caffe
+git clone https://github.com/NVIDIA/caffe.git $CAFFE_ROOT
+sudo pip install -r $CAFFE_ROOT/python/requirements.txt
+cat $CAFFE_ROOT/python/requirements.txt | xargs -n1 sudo pip install
+cd $CAFFE_ROOT
+mkdir build
+cd build
+cmake ..
+make --jobs=4
+
 
