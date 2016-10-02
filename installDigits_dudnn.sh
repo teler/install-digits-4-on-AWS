@@ -1,7 +1,7 @@
 #!/bin/bash
-#https://raw.githubusercontent.com/teler/install-digits-4-on-AWS/master/installDigits_dudnn.sh
-##chmod +x installDIGITS.sh
-#./installDIGITS.sh
+#wget https://raw.githubusercontent.com/teler/install-digits-4-on-AWS/master/installDigits_dudnn.sh
+#chmod +x installDigits_dudnn.sh
+#./installDigits_dudnn.sh
 
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get install -y linux-image-extra-`uname -r`
