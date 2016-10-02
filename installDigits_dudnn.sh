@@ -9,16 +9,22 @@ trap read debug
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get install -y linux-image-extra-`uname -r`
 #Install NVIDIA drivers
-sudo add-apt-repository ppa:graphics-drivers/ppa
-sudo apt-get update
-sudo apt-get install nvidia-361 nvidia-settings
+#sudo add-apt-repository ppa:graphics-drivers/ppa
+#sudo apt-get update
+#sudo apt-get install nvidia-361 nvidia-settings
 
 #Install CUDA	
-CUDA_REPO_PKG=cuda-repo-ubuntu1404_7.5-18_amd64.deb
-wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/${CUDA_REPO_PKG} -O /tmp/${CUDA_REPO_PKG}
-sudo dpkg -i /tmp/${CUDA_REPO_PKG}
+#CUDA_REPO_PKG=cuda-repo-ubuntu1404_7.5-18_amd64.deb
+#wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/${CUDA_REPO_PKG} -O /tmp/${CUDA_REPO_PKG}
+#sudo dpkg -i /tmp/${CUDA_REPO_PKG}
+#sudo apt-get install cuda
+#rm -f /tmp/${CUDA_REPO_PKG}
+
+wget http://admindv.s3.amazonaws.com/cuda-repo-ubuntu1404_8.0.44-1_amd64.deb
+sudo dpkg -i cuda-repo-ubuntu1404_8.0.44-1_amd64.deb
+sudo apt-get update
 sudo apt-get install cuda
-rm -f /tmp/${CUDA_REPO_PKG}
+
 
 #Install cudnn
 wget http://admindv.s3.amazonaws.com/cuda_cudnn.tar.gz
@@ -50,7 +56,8 @@ cd $CAFFE_ROOT
 mkdir build
 cd build
 cmake ..
-make --jobs=4
+make --jobs=8
+cd ../..
 
 
 # example location - can be customized
