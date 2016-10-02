@@ -6,29 +6,33 @@
 sudo apt-get update && sudo apt-get -y upgrade
 sudo apt-get install -y linux-image-extra-`uname -r`
 #Install NVIDIA drivers
-sudo add-apt-repository ppa:graphics-drivers/ppa 
+#sudo add-apt-repository ppa:graphics-drivers/ppa
+#sudo apt-get update
+#sudo apt-get install nvidia-361 nvidia-settings
 
 #InstallCUDA	
 CUDA_REPO_PKG=cuda-repo-ubuntu1404_7.5-18_amd64.deb
 wget http://developer.download.nvidia.com/compute/cuda/repos/ubuntu1404/x86_64/${CUDA_REPO_PKG} -O /tmp/${CUDA_REPO_PKG}
 sudo dpkg -i /tmp/${CUDA_REPO_PKG}
 rm -f /tmp/${CUDA_REPO_PKG}
-sudo apt-get update
-sudo apt-get install cuda 
 
 #InstallCUDnn
-http://admindv.s3.amazonaws.com/cudnn-7.5-linux-x64-v5.1.tgz
-tar -xvf cudnn-7.5-linux-x64-v5.1.tgz
+wget http://admindv.s3.amazonaws.com/cuda_cudnn.tar.gz
+tar -xvf cudnn-8.0-linux-x64-v5.1.tgz
 
-sudo cp cuda/include/cudnn.h /usr/local/cuda-7.5/include
-sudo cp cuda/lib64/libcudnn* /usr/local/cuda-7.5/lib64
+sudo cp cuda/include/cudnn.h /usr/local/cuda-8.0/include
+sudo cp cuda/lib64/libcudnn* /usr/local/cuda-8.0/lib64
 sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 
 #Install ML
 
-wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/nvidia-machine-learning-repo-ubuntu1404_4.0-2_amd64.deb &&
-sudo dpkg -i nvidia-machine-learning-repo-ubuntu1404_4.0-2_amd64.deb
+ML_REPO_PKG=nvidia-machine-learning-repo-ubuntu1404_4.0-2_amd64.deb
+wget http://developer.download.nvidia.com/compute/machine-learning/repos/ubuntu1404/x86_64/${ML_REPO_PKG} -O /tmp/${ML_REPO_PKG}
+sudo dpkg -i /tmp/${ML_REPO_PKG}
+rm -f /tmp/${ML_REPO_PKG}
 
 sudo apt-get update
 sudo apt-get install digits
+
+
